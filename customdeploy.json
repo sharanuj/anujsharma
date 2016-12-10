@@ -41,4 +41,51 @@
          },
     "adminPassword": {
       "type": "securestring",
-      
+         "metadata": {
+               "description": "The Password of the administrative user for each VM instance created"
+           
+              }
+       },
+      "sourceImageVhdUri": {
+           "type": "string",
+           "metadata": {
+                 "description": "The source of the blob containing the custom image"
+                }
+          },
+      "frontEndLBPort": {
+           "type": "int",
+           "metadata": {
+                 "description": "The front end port to load balance"
+                },
+           "defaultValue": 80
+          },
+      "backEndLBPort": {
+           "type": "int",
+           "metadata": {
+                 "description": "The front end port to load balance"
+                },
+           "defaultValue": 80
+          },
+      "probeIntervalInSeconds": {
+           "type": "int",
+           "metadata": {
+                 "description": "The interval between load balancer health probes"
+                },
+           "defaultValue": 15
+          },
+      "numberOfProbes": {
+           "type": "int",
+           "metadata": {
+                 "description": "The number of probes that need to fail before a VM instance is deemed unhealthy"
+                },
+           "defaultValue": 5
+          },
+     "probeRequestPath": {
+          "type": "string",
+          "metadata": {
+                "description": "The path used for the load balancer health probe"
+               },
+          "defaultValue": "/iisstart.htm"
+         }
+     },
+  
